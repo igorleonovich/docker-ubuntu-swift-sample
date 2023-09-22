@@ -12,6 +12,7 @@ Build & run Swift applications from Docker container via ssh
 
 ### Todo
 - SSH access to `ubuntu` user (now `root` is working only)
+  - https://superuser.com/questions/1514272/global-ssh-key-working-for-root-user-but-not-for-other-users
 
 ### Notes
 - For clean Docker stopped resources and up again, run `reup.sh`
