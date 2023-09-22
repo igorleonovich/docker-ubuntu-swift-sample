@@ -1,0 +1,18 @@
+version: '3.7'
+
+x-shared_environment: &shared_environment
+  LOG_LEVEL: ${LOG_LEVEL:-debug}
+
+services:
+
+  ubuntu-swift-sample:
+    image: ubuntu-swift-sample:latest
+    container_name: ubuntu-swift-sample
+    restart: always
+    build:
+      context: .
+    environment:
+      <<: *shared_environment
+      SSH_INTERNAL_PORT: ${SSH_INTERNAL_PORT}
+    ports:
+      - ${SSH_EXTERNAL_PORT}:${SSH_INTERNAL_PORT}
